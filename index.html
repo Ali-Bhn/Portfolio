@@ -1,87 +1,287 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" 
-    content="Portfolio von Ali bahadoran , Umschüler zum Fachinformatiker für Anwendungsentwicklung in Berlin "
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio von Ali Bahadoran, Umschüler zum Fachinformatiker für Anwendungsentwicklung in Berlin."
     />
-    <link rel="stylesheet" href="./src/css/style.css">
-    <script src="./src/Js/main.js" defer></script>
     <title>Ali Bahadoran | Portfolio</title>
-</head>
-<body>
-    <!-- Mous-follow by JS -->
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+  </head>
+  <body>
+    <!-- Subtle mouse-follow background light controlled by JavaScript. -->
     <div class="background-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-        <nav class="navbar" aria-label="Hauptnavigation">
-            <a href="#hero" class="logo" aria-label="Ali Bahadoran Startseite">
-                <span class="logo-mark">AB</span>
-                <span>Ali Bahadoran</span>
-            </a>
-            <button 
-                class="nav-toggle"
-                type="button"
-                aria-label="Menü Öffnen"
-                aria-controls="primary-navigation"
-                aria-expanded="false"
-                >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="primary-navigation">
-                <li><a href="#about">Über mich</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projekte</a></li>
-                <li><a href="#learning">Lernfokus</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar container" aria-label="Hauptnavigation">
+        <a class="logo" href="#hero" aria-label="Ali Bahadoran Startseite">
+          <span class="logo-mark">AB</span>
+          <span>Ali Bahadoran</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#learning">Lernfokus</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Hero -->
     <main>
-        <section class="hero section" id="hero">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <p class="eyebrow">Portfolio, Berlin, Germany</p>
-                    <h1>Ali Bahadoran</h1>
-                    <p class="hero-role">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                        Modi, dignissimos voluptatum ratione quos, fuga eligendi quidem 
-                        temporibus aliquid magnam sit blanditiis officia, amet quod exercitationem. 
-                        Repellendus architecto odio sunt quibusdam?
-                    </p>
-                    <p class="hero-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                        Modi, dignissimos voluptatum ratione quos, fuga eligendi quidem 
-                        temporibus aliquid magnam sit blanditiis officia, amet quod exercitationem. 
-                        Repellendus architecto odio sunt quibusdam?
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
-                        <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
-                    </div>
-                </div>
-                <aside class="hero-card" aria-label="Kurzprofil">
-                    <div class="profile-orbit">
-                        <img src="./src/assets/images/Ali_Bahadoran.png" 
-                        alt="Portfoliofoto von Ali Bahadoran" 
-                        class="profile-photo">
-                    </div>
-                    <h2>
-                        Junior Web Developer in Entwicklung 
-                    </h2>
-                    <ul class="profile-list">
-                        <li><span>Standort</span><strong>Berlin</strong></li>
-                        <li><span>Schwerpunkt</span><strong>Web & Software</strong></li>
-                        <li><span>Gesucht</span><strong>Praktikum</strong></li>
-                    </ul>
-                </aside>
+      <!-- Hero: concise professional introduction and main call-to-action. -->
+      <section class="hero section" id="hero">
+        <div class="hero-grid container">
+          <div class="hero-content">
+            <p class="eyebrow">Portfolio · Berlin, Germany</p>
+            <h1>Ali Bahadoran</h1>
+            <p class="hero-role">
+              Umschüler zum Fachinformatiker für Anwendungsentwicklung mit Fokus
+              auf Web Development und moderne Softwareentwicklung.
+            </p>
+            <p class="hero-text">
+              Ich lerne aktuell HTML, CSS, JavaScript, Python, Datenbanken und
+              Angular. Mein Ziel ist ein Praktikum oder eine Junior-Chance in
+              der Anwendungsentwicklung, um praxisnah an echten Softwarelösungen
+              mitzuwirken.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">Projekte ansehen</a>
+              <a class="btn btn-secondary" href="#contact">Kontakt aufnehmen</a>
             </div>
-        </section>
+          </div>
+
+          <aside class="hero-card" aria-label="Kurzprofil">
+            <div class="profile-orbit">
+              <img
+                class="profile-photo"
+                src="./src/assets/images/Ali_Bahadoran.png"
+                alt="Portraitfoto von Ali Bahadoran"
+              />
+            </div>
+            <h2>Junior Web Developer in Entwicklung</h2>
+            <ul class="profile-list">
+              <li><span>Standort</span><strong>Berlin</strong></li>
+              <li><span>Schwerpunkt</span><strong>Web & Software</strong></li>
+              <li><span>Gesucht</span><strong>Praktikum</strong></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container section-grid">
+          <div>
+            <p class="section-label">Über mich</p>
+            <h2>Strukturiert lernen, sauber umsetzen, stetig besser werden.</h2>
+          </div>
+          <div class="section-text">
+            <p>
+              Ich befinde mich in der Umschulung zum Fachinformatiker für
+              Anwendungsentwicklung und baue Schritt für Schritt ein solides
+              Fundament in Webentwicklung und Softwareentwicklung auf.
+            </p>
+            <p>
+              Besonders wichtig sind mir verständlicher Code, klare Strukturen
+              und die Fähigkeit, technische Anforderungen in nutzerfreundliche
+              Lösungen zu übersetzen. Ich suche ein Praktikum in der
+              Anwendungsentwicklung, in dem ich mein Wissen praktisch anwenden
+              und im Team weiterentwickeln kann.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Skills</p>
+            <h2>Technologien und Grundlagen</h2>
+            <p>
+              Mein aktueller Fokus liegt auf Frontend-Grundlagen, ersten
+              Backend-Konzepten und sauberem Arbeiten mit Daten.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <h3>HTML</h3>
+              <p>Semantische Struktur, zugängliche Inhalte und klare Seitenaufteilung.</p>
+            </article>
+            <article class="skill-card">
+              <h3>CSS</h3>
+              <p>Responsive Layouts, Flexbox, Grid, Variablen und moderne UI-Details.</p>
+            </article>
+            <article class="skill-card">
+              <h3>JavaScript</h3>
+              <p>Interaktive Oberflächen, DOM-Manipulation und kleine UI-Funktionen.</p>
+            </article>
+            <article class="skill-card">
+              <h3>Python</h3>
+              <p>Grundlagen der Programmierung, Logik, Funktionen und Datenverarbeitung.</p>
+            </article>
+            <article class="skill-card">
+              <h3>Datenbanken</h3>
+              <p>Grundverständnis für Datenmodelle, SQL und strukturierte Informationen.</p>
+            </article>
+            <article class="skill-card">
+              <h3>Angular</h3>
+              <p>Teil meines Lernplans für moderne, komponentenbasierte Webanwendungen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Projekte</p>
+            <h2>Beispielprojekte aus der Lernphase</h2>
+            <p>
+              Diese Projektideen zeigen, welche Themen ich aktuell übe und wie
+              ich mein Wissen praktisch anwende.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-topline">
+                <span>Frontend</span>
+                <span>HTML · CSS · JS</span>
+              </div>
+              <h3>Responsive Portfolio Website</h3>
+              <p>
+                Eine persönliche Website mit klarer Navigation, mobilem Menü,
+                responsiven Karten und moderner Dark-Blue-Oberfläche.
+              </p>
+              <a href="https://github.com/Ali-Bhn/Portfolio" aria-label="Der Link von der github-Seite von Ali Bahadoran" target="_blank">
+                Mehr erfahren
+              </a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-topline">
+                <span>JavaScript</span>
+                <span>DOM · Events</span>
+              </div>
+              <h3>JavaScript Aufgaben</h3>
+              <p>
+                Die Aufgaben , die ich selbt gemacht haben um mehr erfahrungen in der Praxis zu sammeln.
+              </p>
+              <a href="https://github.com/Ali-Bhn/JS-Aufgaben" aria-label="Der Link von der github-Seite von Ali Bahadoran" target="_blank">
+                Mehr erfahren
+              </a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-topline">
+                <span>JavaScript</span>
+                <span>Events · API</span>
+              </div>
+              <h3>Wetter App</h3>
+              <p>
+                Eigenständig entwickelte Wetter-App mit HTML, CSS und JavaScript. Über die
+                Fetch API werden Wetterdaten einer externen API geladen und dynamisch
+                dargestellt. Nutzer können nach Städten suchen und aktuelle Wetterinformationen
+                in Echtzeit abrufen. 
+              </p>
+              <a href="https://github.com/Ali-Bhn/JS-Aufgaben/tree/main/aufgabe-7-Wheather%20App" aria-label="Mehr zu Python Lernskripten besprechen" target="_blank">
+                Mehr erfahren
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="learning">
+        <div class="container learning-layout">
+          <div>
+            <p class="section-label">Learning Path</p>
+            <h2>Aktueller Fokus</h2>
+            <p class="section-text">
+              Mein Lernweg verbindet solide Grundlagen mit praxisnahen Aufgaben.
+              Ich arbeite daran, sichere Routinen für Frontend, Logik,
+              Datenbanken und später Angular aufzubauen.
+            </p>
+          </div>
+
+          <ol class="timeline">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Web-Grundlagen stärken</h3>
+                <p>HTML, CSS, Responsive Design und semantische Struktur.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>JavaScript vertiefen</h3>
+                <p>DOM, Events, Funktionen, Module und kleine Anwendungen.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Backend & Daten verstehen</h3>
+                <p>Python, Datenbanken, SQL-Grundlagen und saubere Datenmodelle.</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Angular lernen</h3>
+                <p>Komponenten, Routing und strukturierte Single-Page-Apps.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container contact-card">
+          <p class="section-label">Kontakt</p>
+          <h2>Offen für ein Praktikum in der Anwendungsentwicklung</h2>
+          <p>
+            Ich freue mich über Kontakte zu Unternehmen und Teams in Berlin, die
+            motivierte Nachwuchskräfte fördern und praxisnahe Einblicke in die
+            Softwareentwicklung ermöglichen.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:ali.bahadoran@example.com">
+              E-Mail schreiben
+            </a>
+            <a class="btn btn-secondary" href="tel:+491234567890">
+              Telefonkontakt
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Ali Bahadoran. Alle Rechte vorbehalten.</p>
+        <a href="#hero">Zurück nach oben</a>
+      </div>
+    </footer>
+    <script src="src/js/main.js" defer></script>
+  </body>
 </html>
