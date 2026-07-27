@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wetter App von Ali Bahadoran – Live-Demo mit HTML, CSS und JavaScript, Wetterdaten über die Open-Meteo API." />
+    <link rel="stylesheet" href="./style.css">
+    <title>Wetter App | Ali Bahadoran</title>
+</head>
+<body>
+    <header class="demo-topbar">
+        <a href="../../index.html#projects">&larr; Zurück zum Portfolio</a>
+        <a href="https://github.com/Ali-Bhn/JS-Aufgaben/tree/main/aufgabe-7-Wheather%20App" target="_blank" rel="noopener">Quellcode ansehen</a>
+    </header>
+    <main>
+        <section>
+            <h1>Wetter App</h1>
+            <div class="search-container">
+                <!-- Suchbereich -->
+                <input type="text" id="cityInput" placeholder="Stadt - z,B: Berlin">
+                <button id="searchButton">Suchen</button>
+            </div>
+            <!-- Wetterdaten -->
+            <div id="weatherContainer"></div>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
+</html>

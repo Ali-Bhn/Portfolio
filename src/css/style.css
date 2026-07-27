@@ -436,15 +436,26 @@ p {
   text-transform: uppercase;
 }
 
-.project-card a {
-  width: fit-content;
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
   margin-top: auto;
+}
+
+.project-links a {
+  width: fit-content;
   color: var(--color-primary);
   font-weight: 800;
 }
 
-.project-card a:hover,
-.project-card a:focus-visible,
+.project-links a.project-link-secondary {
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible,
 .site-footer a:hover,
 .site-footer a:focus-visible {
   color: var(--color-text);

@@ -1,0 +1,153 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 26rem) ,
+        linear-gradient(135deg, #06111f 0%, #07182b 48%, #0b1d33 100%);
+
+}
+
+.demo-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    color: #f8fafc;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+    background: rgba(6, 17, 31, 0.84);
+}
+
+.demo-topbar a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.demo-topbar a:hover,
+.demo-topbar a:focus-visible {
+    color: #f8fafc;
+}
+p {
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+
+}
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+section{
+    width: 100%;
+    height:420px;
+    color: white;
+        background:
+        radial-gradient(circle at top left, rgba(175, 215, 234, 0.16), transparent 26rem) ,
+        linear-gradient(135deg, #133237 0%, #1c497b 48%, #122c4d 100%);
+    padding: 2rem;
+    box-shadow: 2px 20px 30px  rgba(139, 152, 158, 0.16) ;
+}
+/* ============================================================================= */
+/* ==============================Such-Bereich=================================== */
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+#searchButton{
+    border: 1px solid white;
+    border-radius: 8px;
+    background:white;
+    color:black;
+    padding: 0.5rem 1rem;
+    transition: .3s;
+    
+
+}
+#searchButton:hover{
+    background: #0b1d33;
+    color: aqua;
+    cursor: pointer;
+    transition: .3s;
+    transform: translateY(-2px);
+
+}
+#cityInput{
+    width: min(400px, 100%);
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: none;
+}
+.weather-card{
+    width: 100%;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 1.5rem auto 0;
+    border-radius: 1.5rem;
+    gap : 1.25rem;
+    color: #f8fafc;
+    background:
+        radial-gradient(circle at top left, rgba(25, 146, 146, 0.25), transparent 8rem),
+        linear-gradient(135deg, #254e83 0%, #061f3b 48%, #0b1d33 100%);
+
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+
+    
+}
+.top-row{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 90%;
+    gap: 2rem;
+}
+.weather-card:hover{
+    transform: translateY(3px);
+}
+
+.weather-icon {
+    align-self: center;
+    font-size: 5rem;
+}
+.weather-description{
+    font-size: 2rem;
+    align-self: flex-start;
+    font-weight: 700;
+    letter-spacing: 2;
+}
+.temp-element{
+    font-size: 2rem;
+    align-self: center;
+}
+.city-element{
+    margin-left: auto; 
+    display: flex; 
+    flex-direction: column;
+    font-size: 2rem;
+
+}
