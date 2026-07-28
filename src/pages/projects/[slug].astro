@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from "astro:content";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import { sortByDateDesc, getRelatedProjects } from "../../utils/projects";
+import { estimateReadingTime } from "../../utils/readingTime";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content, headings } = await render(project);
+
+const allProjects = sortByDateDesc(await getCollection("projects"));
+const currentIndex = allProjects.findIndex((entry) => entry.id === project.id);
+const prev = allProjects[currentIndex - 1];
+const next = allProjects[currentIndex + 1];
+const related = getRelatedProjects(project, allProjects);
+const readingTime = estimateReadingTime(project.body ?? "");
+---
+
+<ProjectLayout project={project} headings={headings} prev={prev} next={next} related={related} readingTime={readingTime}>
+  <Content />
+</ProjectLayout>

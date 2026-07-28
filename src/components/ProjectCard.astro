@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { title, shortDescription, coverImage, technologies, status } = project.data;
+
+const statusLabel: Record<string, string> = {
+  completed: "Fertig",
+  "in-progress": "In Arbeit",
+  planned: "Geplant",
+};
+---
+
+<article class="project-card">
+  <a class="project-card-media" href={`/projects/${project.id}`} tabindex="-1" aria-hidden="true">
+    <Image src={coverImage} alt="" width={640} height={400} loading="lazy" />
+    <span class="project-card-status">{statusLabel[status]}</span>
+  </a>
+
+  <div class="project-card-body">
+    <div class="project-topline">
+      <span>{project.data.category}</span>
+      <span>{project.data.difficulty}</span>
+    </div>
+
+    <h3>
+      <a href={`/projects/${project.id}`}>{title}</a>
+    </h3>
+
+    <p>{shortDescription}</p>
+
+    <ul class="project-tech-list">
+      {technologies.slice(0, 4).map((tech) => <li>{tech}</li>)}
+    </ul>
+
+    <a class="project-card-link" href={`/projects/${project.id}`}>
+      Weiterlesen
+    </a>
+  </div>
+</article>
