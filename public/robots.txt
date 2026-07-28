@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bahadoran.de/sitemap-index.xml
