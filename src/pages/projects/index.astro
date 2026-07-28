@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ProjectGrid from "../../components/ProjectGrid.astro";
+import { sortByDateDesc } from "../../utils/projects";
+
+const projects = sortByDateDesc(await getCollection("projects"));
+const description =
+  "Eine Übersicht aller Projekte von Ali Bahadoran: Web-Apps und Übungsprojekte aus der Umschulung zum Fachinformatiker für Anwendungsentwicklung.";
+---
+
+<BaseLayout title="Projekte | Ali Bahadoran" description={description}>
+  <div class="section page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Startseite", href: "/" }, { label: "Projekte" }]} />
+
+      <div class="section-heading">
+        <p class="section-label">Projekte</p>
+        <h1>Alle Projekte</h1>
+        <p>{description}</p>
+      </div>
+
+      <ProjectGrid projects={projects} />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,119 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import { Image } from "astro:assets";
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+import ReadingProgressBar from "../components/ReadingProgressBar.astro";
+import ShareButtons from "../components/ShareButtons.astro";
+import ProjectPagerNav from "../components/ProjectPagerNav.astro";
+import RelatedProjects from "../components/RelatedProjects.astro";
+import Gallery from "../components/Gallery.astro";
+import { SITE_URL } from "../utils/site";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  headings: MarkdownHeading[];
+  prev?: CollectionEntry<"projects">;
+  next?: CollectionEntry<"projects">;
+  related: CollectionEntry<"projects">[];
+  readingTime: number;
+}
+
+const { project, headings, prev, next, related, readingTime } = Astro.props;
+const { title, description, coverImage, coverImageAlt, technologies, liveUrl, githubUrl, date, category, difficulty, status, screenshots } =
+  project.data;
+
+const statusLabel: Record<string, string> = {
+  completed: "Fertig",
+  "in-progress": "In Arbeit",
+  planned: "Geplant",
+};
+
+const formattedDate = date.toLocaleDateString("de-DE", { year: "numeric", month: "long" });
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: title,
+  description,
+  dateCreated: date.toISOString(),
+  author: { "@type": "Person", name: "Ali Bahadoran" },
+  url: new URL(`/projects/${project.id}`, SITE_URL).toString(),
+  ...(githubUrl ? { codeRepository: githubUrl } : {}),
+  keywords: technologies.join(", "),
+};
+---
+
+<BaseLayout
+  title={`${title} | Ali Bahadoran`}
+  description={description}
+  image={coverImage.src}
+  type="article"
+  structuredData={structuredData}
+>
+  <ReadingProgressBar />
+
+  <div class="section project-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Startseite", href: "/" }, { label: "Projekte", href: "/projects" }, { label: title }]} />
+
+      <div class="project-hero-media">
+        <Image src={coverImage} alt={coverImageAlt} width={1600} height={686} loading="eager" />
+      </div>
+
+      <div class="project-meta-row">
+        <span class="project-meta-chip">{category}</span>
+        <span class="project-meta-chip">{difficulty}</span>
+        <span class="project-meta-chip">{statusLabel[status]}</span>
+        <span class="project-meta-chip is-muted">{formattedDate}</span>
+        <span class="project-meta-chip is-muted">{readingTime} Min. Lesezeit</span>
+      </div>
+
+      <div class="project-title-row">
+        <h1>{title}</h1>
+      </div>
+
+      <div class="project-actions">
+        {liveUrl && (
+          <a class="btn btn-primary" href={liveUrl} target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </a>
+        )}
+        {githubUrl && (
+          <a class="btn btn-secondary" href={githubUrl} target="_blank" rel="noopener noreferrer">
+            Quellcode ansehen
+          </a>
+        )}
+        <a class="btn btn-secondary" href="/projects">
+          ← Zurück zu Projekten
+        </a>
+      </div>
+
+      <ul class="project-tech-chips">
+        {technologies.map((tech) => <li>{tech}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="project-body-grid" data-reading-target>
+        <div class="prose">
+          <slot />
+
+          <Gallery screenshots={screenshots} />
+        </div>
+
+        <TableOfContents headings={headings} />
+      </div>
+
+      <ProjectPagerNav prev={prev} next={next} />
+      <RelatedProjects projects={related} />
+      <ShareButtons title={title} />
+    </div>
+  </div>
+
+  <script src="../scripts/copy-code.js" />
+</BaseLayout>
